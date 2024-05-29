@@ -2,11 +2,11 @@
 
 <main>
 
-    <h1>Bienvenue</h1>
+    <h1>Accueil</h1>
 
     <section class="authentification">
+        
         <!-- Formulaire de connexion -->
-
         <form action="compte-connecter" method="POST">
             <!-- Courriel -->
             <input 
