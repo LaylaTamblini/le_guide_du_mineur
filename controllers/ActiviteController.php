@@ -14,7 +14,10 @@ class ActiviteController extends Controller {
             $this->rediriger("index");
         }
 
-        $this->vue("activites/index");
+        $this->vue("activites/index", [
+            "activites" => (new Activite)->toutAvecUtilisateur($_SESSION["utilisateur_id"]),
+            "utilisateur" => (new Utilisateur)->parId($_SESSION["utilisateur_id"])
+        ]);
     }
 
 }

@@ -51,7 +51,6 @@ class Model
                 FROM $this->table";
 
         $requete = self::pdo()->prepare($sql);
-
         $requete->execute();
 
         return $requete->fetchAll();
@@ -70,7 +69,6 @@ class Model
                 WHERE id = :id";
 
         $requete = self::pdo()->prepare($sql);
-
         $requete->execute([
             ":id" => $id
         ]);
