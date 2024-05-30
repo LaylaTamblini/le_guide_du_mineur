@@ -40,7 +40,7 @@ class Utilisateur extends Model {
      * 
      * @return object|false
      */
-    public function paremail(string $email) : object|false {
+    public function parEmail(string $email) : object|false {
         $sql = "
             SELECT *
             FROM $this->table

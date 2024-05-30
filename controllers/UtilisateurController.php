@@ -28,7 +28,7 @@ class UtilisateurController extends Controller {
         }
 
         // Récupère un utilisateur selon son email
-        $utilisateur = (new Utilisateur)->paremail($_POST["email"]);
+        $utilisateur = (new Utilisateur)->parEmail($_POST["email"]);
 
         // Validation de l'utilisateur et son mot de passe
         // Ajouter password_verify + tard
