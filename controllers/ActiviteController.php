@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Bases\Controller;
 use Models\Activite;
+use Models\Categorie;
 use Models\Utilisateur;
 
 class ActiviteController extends Controller {

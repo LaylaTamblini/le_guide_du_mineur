@@ -1,7 +1,6 @@
-<?php
+<?php include("views/components/head.php");
 
-use Models\Activite;
-include("views/components/head.php");
+var_dump($categorie)
 
 ?>
 
