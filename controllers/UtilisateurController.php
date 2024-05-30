@@ -38,7 +38,7 @@ class UtilisateurController extends Controller {
 
         $_SESSION["utilisateur_id"] = $utilisateur->id;
 
-        $this->rediriger("index?succes_connexion");
+        $this->rediriger("activites?succes_connexion");
     }
 
     /**
