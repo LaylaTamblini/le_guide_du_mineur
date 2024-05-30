@@ -13,6 +13,8 @@ class ActiviteController extends Controller {
         if(empty($_SESSION["utilisateur_id"])){
             $this->rediriger("index");
         }
+
+        $this->vue("activites/index");
     }
 
 }

@@ -5,6 +5,7 @@ include("views/components/head.php");
 
 ?>
 
-<h1>Bienvenue à la page des activités</h1>
+<h1>Vos activités</h1>
+<a href="compte-deconnecter">Se déconnecter</a>
 
 <?php include("views/components/foot.php") ?>

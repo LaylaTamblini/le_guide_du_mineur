@@ -12,15 +12,15 @@ class Utilisateur extends Model {
      *
      * @param string $nom
      * @param string $prenom
-     * @param string $courriel
+     * @param string $email
      * @param string $mot_de_passe
      * 
      * @return boolean
      */
-    public function ajouter(string $nom, string $prenom, string $courriel, string $mot_de_passe) : bool {
+    public function ajouter(string $nom, string $prenom, string $email, string $mot_de_passe) : bool {
         $sql = "
-            INSERT INTO $this->table (nom, prenom, courriel, mot_de_passe)
-            VALUES (:nom, :prenom, :courriel, :mot_de_passe)
+            INSERT INTO $this->table (nom, prenom, email, mot_de_passe)
+            VALUES (:nom, :prenom, :email, :mot_de_passe)
         ";
 
         $requete = $this->pdo()->prepare($sql);
@@ -28,29 +28,29 @@ class Utilisateur extends Model {
         return $requete->execute([
             ":nom" => $nom,
             ":prenom" => $prenom,
-            ":courriel" => $courriel,
+            ":email" => $email,
             ":mot_de_passe" => $mot_de_passe,
         ]);
     }
 
     /**
-     * Retourne un utilisateur selon un courriel
+     * Retourne un utilisateur selon un email
      *
-     * @param string $courriel
+     * @param string $email
      * 
      * @return object|false
      */
-    public function parCourriel(string $courriel) : object|false {
+    public function paremail(string $email) : object|false {
         $sql = "
             SELECT *
             FROM $this->table
-            WHERE courriel = :courriel
+            WHERE email = :email
         ";
 
-        $requete = $this->pdo()->preapre($sql);
+        $requete = $this->pdo()->prepare($sql);
 
         $requete->execute([
-            ":courriel" => $courriel
+            ":email" => $email
         ]);
 
         return $requete->fetch();

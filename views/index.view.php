@@ -8,11 +8,21 @@
         
         <!-- Formulaire de connexion -->
         <form action="compte-connecter" method="POST">
-            <!-- Courriel -->
+
+            <!-- Informations requises -->
+            <?php if(isset($_GET["informations_requises"])) : ?>
+                <p>Tous les champs sont requis. Merci de les remplir pour continuer.</p>
+            <?php endif; ?>
+            <!-- Informations invalides -->
+            <?php if(isset($_GET["informations_invalides"])) : ?>
+                <p>L'adresse email ou le mot de passe que vous avez entré est incorrect.</p>
+            <?php endif; ?>
+            
+            <!-- email -->
             <input 
                 type="text" 
-                name="courriel" 
-                placeholder="Courriel"
+                name="email" 
+                placeholder="Adresse e-mail"
                 autofocus
             >
             <!-- Mot de passe -->

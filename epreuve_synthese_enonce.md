@@ -9,7 +9,7 @@ Le mandat de cet exercice est de créer un site web qui affiche une liste d’ac
 
 L’utilisateur peut se connecter dans une page de connexion pour accéder à la page d'administration lui permettant de consulter, d’ajouter et de supprimer des activités dans la liste.  
 - Les utilisateurs ne peuvent consulter ou supprimer que les activités qu'ils ont ajoutés **eux-mêmes et qui leur appartiennent**.
-- Un utilisateur a un nom, un prénom, un courriel, un mot de passe et une date de création de son compte.  
+- Un utilisateur a un nom, un prénom, un email, un mot de passe et une date de création de son compte.  
   
 <br>
 
@@ -25,7 +25,7 @@ L’utilisateur peut se connecter dans une page de connexion pour accéder à la
 ## Liste des pages
 
 ### Accueil/Connexion
->1. Formulaire de connexion avec courriel et mot de passe
+>1. Formulaire de connexion avec email et mot de passe
 >1. Lors d'une erreur de connexion, un message approprié doit être affiché dans la page
 >1. Lors d'une connexion réussie, on redirige à la page d'administration qui affiche la liste des activités
 >1. Lien vers le formulaire de création d'un compte
