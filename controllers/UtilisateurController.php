@@ -32,7 +32,7 @@ class UtilisateurController extends Controller {
 
         // Validation de l'utilisateur et son mot de passe
         // Ajouter password_verify + tard
-        if(!$utilisateur || $_POST["mot_de_passe"] != $utilisateur->mot_de_passe ) {
+        if(!$utilisateur || $_POST["mot_de_passe"] != password_verify($_POST["mot_de_passe"], $utilisateur->mot_de_passe) ) {
             $this->rediriger("index?informations_invalides");
         }
 
@@ -54,6 +54,33 @@ class UtilisateurController extends Controller {
      */
     public function create() {
         $this->vue("utilisateurs/create");
+    }
+
+    public function store() {
+        if(empty($_POST["prenom"]) ||
+           empty($_POST["nom"]) || 
+           empty($_POST["email"]) ||
+           empty($_POST["mot_de_passe"]) ||
+           empty($_POST["confirmation_mdp"])){
+            $this->rediriger("compte-creer?informations_requises");
+        }
+
+        if($_POST["mot_de_passe"] != $_POST["confirmation_mdp"]) {
+            $this->rediriger("compte-creer?mdp_invalide");
+        }
+
+        $succes = (new Utilisateur)->ajouter(
+            $_POST["prenom"],
+            $_POST["nom"],
+            $_POST["email"],
+            password_hash($_POST["mot_de_passe"], PASSWORD_DEFAULT)
+        );
+
+        if(!$succes) {
+            $this->rediriger("compte-creer?echec_creation");
+        }
+
+        $this->rediriger("index?succes_creation");
     }
 
 }
