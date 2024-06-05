@@ -10,24 +10,24 @@ class Utilisateur extends Model {
     /**
      * Ajoute un nouvel utilisateur dans la base de donnée
      *
-     * @param string $nom
      * @param string $prenom
+     * @param string $nom
      * @param string $email
      * @param string $mot_de_passe
      * 
      * @return boolean
      */
-    public function ajouter(string $nom, string $prenom, string $email, string $mot_de_passe) : bool {
+    public function ajouter(string $prenom, string $nom, string $email, string $mot_de_passe) : bool {
         $sql = "
-            INSERT INTO $this->table (nom, prenom, email, mot_de_passe)
-            VALUES (:nom, :prenom, :email, :mot_de_passe)
+            INSERT INTO $this->table (prenom, nom, email, mot_de_passe)
+            VALUES (:prenom, :nom, :email, :mot_de_passe)
         ";
 
         $requete = $this->pdo()->prepare($sql);
 
         return $requete->execute([
-            ":nom" => $nom,
             ":prenom" => $prenom,
+            ":nom" => $nom,
             ":email" => $email,
             ":mot_de_passe" => $mot_de_passe,
         ]);
