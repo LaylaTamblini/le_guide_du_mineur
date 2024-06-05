@@ -8,7 +8,7 @@ use Models\Utilisateur;
 class UtilisateurController extends Controller {
 
     /**
-     * Affiche la page d'accueil
+     * Affiche la page d'accueil.
      */
     public function index() {
         // Protection de la route
@@ -17,18 +17,24 @@ class UtilisateurController extends Controller {
         }
 
         // Affiche la vue
-        $this->vue("index");
+        $this->vue("index", [
+            "titre" => " | Un guide pour TOI ⛏️"
+        ]);
     }
 
     /**
-     * Affiche le formulaire de création de compte
+     * Affiche le formulaire de création de compte.
      */
     public function create() {
+        if(!empty($_SESSION["utilisateur_id"])) {
+            $this->rediriger("activites");
+        }
+        
         $this->vue("utilisateurs/create");
     }
 
     /**
-     * Traite la création d'un compte
+     * Traite la création d'un compte.
      */
     public function store() {
         if(empty($_POST["prenom"]) ||
@@ -58,7 +64,7 @@ class UtilisateurController extends Controller {
     }
     
     /**
-     * Traite la connexion d'un utilisateur
+     * Traite la connexion d'un utilisateur.
      */
     public function connecter() {
         if(empty($_POST["email"]) || empty($_POST["mot_de_passe"])){
@@ -79,7 +85,7 @@ class UtilisateurController extends Controller {
     }
 
     /**
-     * Traite la déconnexion d'un utilisateur
+     * Traite la déconnexion d'un utilisateur.
      */
     public function deconnecter() {
         session_destroy();

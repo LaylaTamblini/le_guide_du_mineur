@@ -8,12 +8,11 @@ class Model
     protected $table = null;
 
     /**
-     * Retourne la connexion
+     * Retourne la connexion.
      *
      * @return PDO
      */
-    protected function pdo()
-    {
+    protected function pdo() : object {
         if(self::$pdo == null){
             $env = parse_ini_file(".env");            
 
@@ -42,7 +41,7 @@ class Model
     }
 
     /**
-     * Retourne toutes les entrées, false si aucun résultat
+     * Retourne toutes les entrées.
      *
      * @return array|false
      */
@@ -57,13 +56,13 @@ class Model
     }
 
     /**
-     * Retourne une entrée en fonction d'un id
+     * Retourne une entrée en fonction d'un id.
      *
      * @param integer $id L'id ciblé
      * 
      * @return object|false
      */
-    public function parId(int $id) : array|false {
+    public function parId(int $id) : object|false {
         $sql = "SELECT *
                 FROM $this->table
                 WHERE id = :id";

@@ -8,12 +8,12 @@ class Utilisateur extends Model {
     protected $table = "utilisateurs";
     
     /**
-     * Ajoute un nouvel utilisateur dans la base de donnée
+     * Ajoute un nouvel utilisateur dans la base de donnée.
      *
-     * @param string $prenom
-     * @param string $nom
-     * @param string $email
-     * @param string $mot_de_passe
+     * @param string $prenom Prénom de l'utilisateur
+     * @param string $nom Nom de famille de l'utilisateur
+     * @param string $email Adresse e-mail de l'utilisateur
+     * @param string $mot_de_passe Mot de passe de l'utilisateur
      * 
      * @return boolean
      */
@@ -34,9 +34,9 @@ class Utilisateur extends Model {
     }
 
     /**
-     * Retourne un utilisateur selon un email
+     * Retourne un utilisateur selon un email.
      *
-     * @param string $email
+     * @param string $email Adresse e-mail de l'utilisateur.
      * 
      * @return object|false
      */

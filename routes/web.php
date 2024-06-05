@@ -18,4 +18,8 @@ $routes = [
     "compte-deconnecter" => ["UtilisateurController", "deconnecter"],
     // Affiche la vue de la publication des activités
     "activites" => ["ActiviteController", "index"],
+    // Affiche la vue vers la page de création d'une activité
+    "activites-creer" => ["ActiviteController", "create"],
+    // Traite la création d'une activité
+    "activites-enregistrer" => ["ActiviteController", "store"],
 ];
