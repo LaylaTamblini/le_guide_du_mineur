@@ -14,7 +14,7 @@ class Activite extends Model {
      * 
      * @return array|false
      */
-    public function toutAvecUtilisateur(int $id) : array|false {
+    public function toutAvecUtilisateur(int $id) {
         $sql = "
             SELECT $this->table.*,
                 utilisateurs.prenom,

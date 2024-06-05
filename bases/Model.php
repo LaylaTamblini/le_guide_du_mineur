@@ -62,8 +62,7 @@ class Model
      * @param integer $id L'id ciblé
      * @return object|false
      */
-    public function parId(int $id) : object|false
-    {
+    public function parId(int $id) {
         $sql = "SELECT *
                 FROM $this->table
                 WHERE id = :id";
