@@ -46,7 +46,7 @@ class Model
      *
      * @return array|false
      */
-    public function tout() {
+    public function tout() : array|false {
         $sql = "SELECT *
                 FROM $this->table";
 
@@ -60,9 +60,10 @@ class Model
      * Retourne une entrée en fonction d'un id
      *
      * @param integer $id L'id ciblé
+     * 
      * @return object|false
      */
-    public function parId(int $id) {
+    public function parId(int $id) : array|false {
         $sql = "SELECT *
                 FROM $this->table
                 WHERE id = :id";
