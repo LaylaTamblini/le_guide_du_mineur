@@ -37,8 +37,9 @@ class ActiviteController extends Controller {
         }
 
         $this->vue("activites/create", [
-            "categories" => (new Categorie)->tout()
+            "categories" => (new Categorie)->recuperationCategories()
         ]);
+
     }
 
     public function store() {
@@ -48,7 +49,7 @@ class ActiviteController extends Controller {
         }
 
         if(empty($_POST["titre"]) || 
-           empty($_POST["categorie"])) {
+           empty($_POST["categories"])) {
             $this->rediriger("activites-creer?informations_requises");
         }
 
@@ -59,8 +60,8 @@ class ActiviteController extends Controller {
 
         $succes = (new Activite)->ajouter(
             $_POST["titre"],
-            $_POST["categorie"],
             $image,
+            $_POST["categories"],
             $_SESSION["utilisateur_id"]
         );
 

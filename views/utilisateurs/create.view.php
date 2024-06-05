@@ -1,7 +1,7 @@
 <?php include("views/components/head.php") ?>
 
-<h1>Création de compte</h1>
 <a href="index">Retour</a>
+<h1>Création de compte</h1>
 
 <section class="formulaire">
     <form action="compte-enregistrer" method="POST">

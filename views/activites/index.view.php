@@ -19,7 +19,18 @@
         <!-- Début Foreach Activité -->
         <?php foreach ($activites as $activite): ?>
             <article class="activite">
+                <a href="activites-supprimer?id=<?= $activite->id ?>">
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </a>
+
+                <p><?= $activite->categorie_nom ?></p>
                 <p><?= $activite->titre ?></p>
+                
+                <?php if($activite->image): ?>
+                    <img src="<?= $activite->image ?>" alt="" width="300px">
+                <?php endif; ?>
             </article>
         <?php endforeach; ?>
         <!-- Fin Foreach Activité -->

@@ -18,10 +18,13 @@ class Activite extends Model {
         $sql = "
             SELECT $this->table.*,
                 utilisateurs.prenom,
-                utilisateurs.nom AS utilisateur_nom
+                utilisateurs.nom,
+                categories.nom AS categorie_nom
             FROM $this->table
             JOIN utilisateurs
                 ON $this->table.utilisateur_id = utilisateurs.id
+            JOIN categories
+                ON $this->table.categorie_id = categories.id
             WHERE utilisateurs.id = :id
         ";
 
@@ -47,10 +50,10 @@ class Activite extends Model {
 
     public function ajouter(string $titre, string $image, int $categorie_id, int $utilisateur_id) : bool {
         $sql = "
-            INSERT INTO $this->table (titre, image, categorie_id, utilisateur_id)
-            VALUES (:titre, :image, :categorie_id, :utilisateur_id)
+        INSERT INTO $this->table (titre, image, categorie_id, utilisateur_id)
+        VALUES (:titre, :image, :categorie_id, :utilisateur_id)
         ";
-
+        
         $requete = $this->pdo()->prepare($sql);
 
         return $requete->execute([

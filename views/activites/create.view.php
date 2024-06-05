@@ -1,7 +1,7 @@
 <?php include("views/components/head.php") ?>
 
-<h1>Création d'une activité</h1>
 <a href="activites">Retour</a>
+<h1>Création d'une activité</h1>
 
 <section class="formulaire">
     <form action="activites-enregistrer" method="POST" enctype="multipart/form-data">
@@ -17,7 +17,7 @@
         <input type="text" name="titre" placeholder="Titre de l'activité" autofocus>
         <input type="file" name="image" placeholder="Image de l'activité">
 
-        <select name="categorie">
+        <select name="categories">
             <?php foreach ($categories as $categorie ): ?>
                 <option value="<?= $categorie->id ?>">
                     <?= $categorie->nom ?>
