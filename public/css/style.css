@@ -129,31 +129,33 @@ main::before {
   background-color: var(--transparence);
   z-index: 0;
 }
-main .authentification {
+
+.formulaire {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   z-index: 1;
   width: 500px;
-  height: 400px;
+  min-height: 400px;
   margin: 1rem;
   padding: 2rem;
   border-radius: 0.6rem;
   color: var(--blanc);
   background-color: var(--noir-pale);
 }
-main .authentification form {
+.formulaire h1 {
+  margin-bottom: 2rem;
+}
+.formulaire form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   width: 80%;
+  height: auto;
 }
-main .authentification form :not(last-child) {
-  margin-bottom: 1rem;
-}
-main .authentification form input[type=email], main .authentification form input[type=password] {
+.formulaire form input[type=email], .formulaire form input[type=password], .formulaire form input[type=text] {
   width: 100%;
   margin-top: 0.2rem;
   padding: 0.8rem;
@@ -161,17 +163,19 @@ main .authentification form input[type=email], main .authentification form input
   background-color: var(--noir);
   border: none;
   color: var(--blanc);
+  margin-bottom: 1rem;
 }
-main .authentification form input[type=email]::-moz-placeholder, main .authentification form input[type=password]::-moz-placeholder {
+.formulaire form input[type=email]::-moz-placeholder, .formulaire form input[type=password]::-moz-placeholder, .formulaire form input[type=text]::-moz-placeholder {
   color: var(--blanc-transparence);
   letter-spacing: 0.5px;
 }
-main .authentification form input[type=email]::placeholder, main .authentification form input[type=password]::placeholder {
+.formulaire form input[type=email]::placeholder, .formulaire form input[type=password]::placeholder, .formulaire form input[type=text]::placeholder {
   color: var(--blanc-transparence);
   letter-spacing: 0.5px;
 }
-main .authentification a {
+.formulaire a {
   font-weight: 300;
   font-size: 0.9rem;
   color: var(--blanc);
+  margin-top: 2rem;
 }/*# sourceMappingURL=style.css.map */

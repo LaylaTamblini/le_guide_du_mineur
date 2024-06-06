@@ -1,0 +1,45 @@
+.formulaire {
+    @include setFlex(column, center, center);
+
+    z-index: 1;
+    width: 500px;
+    min-height: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 0.6rem;
+    color: var(--blanc);
+    background-color: var(--noir-pale);
+
+    & h1 {
+        margin-bottom: 2rem
+    }
+
+    & form {
+        @include setFlex(column, space-between, flex-start);
+        width: 80%;
+        height: auto;
+
+        input[type=email], input[type=password], input[type=text] {
+            width: 100%;
+            margin-top: 0.2rem;
+            padding: 0.8rem;
+            border-radius: 0.6rem;
+            background-color: var(--noir);
+            border: none;
+            color: var(--blanc);
+            margin-bottom: 1rem;
+
+            &::placeholder {
+                color: var(--blanc-transparence);
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+
+    a {
+        font-weight: 300;
+        font-size: 0.9rem;
+        color: var(--blanc);
+        margin-top: 2rem;
+    }
+}

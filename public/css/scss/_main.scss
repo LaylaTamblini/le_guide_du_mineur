@@ -1,0 +1,17 @@
+main {
+    @include setFlex(row, center, center);
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/background.webp");
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--transparence);
+        z-index: 0;
+    }
+}

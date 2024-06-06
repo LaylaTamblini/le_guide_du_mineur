@@ -2,7 +2,7 @@
 
 <main>
 
-    <section class="authentification">
+    <section class="formulaire">
         <h1>Le Guide du Mineur</h1>
 
         <form action="compte-connecter" method="POST">
