@@ -1,0 +1,28 @@
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+    font-family: "Rubik", sans-serif;
+	line-height: 1.5;
+    color: #1B1212;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Jersey 15", sans-serif;
+}
+
+.logo {
+    @include setFlex(row, center, center);
+    font-size: 1.5rem;
+
+    & span {
+        margin-right: 0.5rem;
+    }
+}

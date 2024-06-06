@@ -1,44 +1,44 @@
 <?php include("views/components/head.php") ?>
 
-<main class="accueil">
+<div class="interface">
+    
+    <main>
+    
+        <section class="authentification">
+            <form action="compte-connecter" method="POST">
 
-    <section class="hero">
-        <h1>Construisez votre propre manuel d'exploration</h1>
-    </section>
+                <!-- Début Message Utilisateur -->
+                <?php if(isset($_GET["informations_requises"])) : ?>
+                    <p>Tous les champs sont requis. Merci de les remplir pour continuer.</p>
+                <?php endif; ?>
 
-    <section class="authentification">
-        <form action="compte-connecter" method="POST">
+                <?php if(isset($_GET["informations_invalides"])) : ?>
+                    <p>L'adresse email ou le mot de passe que vous avez entré est incorrect.</p>
+                <?php endif; ?>
 
-            <!-- Début Message Utilisateur -->
-            <?php if(isset($_GET["informations_requises"])) : ?>
-                <p>Tous les champs sont requis. Merci de les remplir pour continuer.</p>
-            <?php endif; ?>
+                <?php if(isset($_GET["succes_deconnexion"])) : ?>
+                    <p>Vous avez été déconnecté!</p>
+                <?php endif; ?>
 
-            <?php if(isset($_GET["informations_invalides"])) : ?>
-                <p>L'adresse email ou le mot de passe que vous avez entré est incorrect.</p>
-            <?php endif; ?>
+                <?php if(isset($_GET["echec_creation"])) : ?>
+                    <p>La création du compte a échoué.</p>
+                <?php endif; ?>
 
-            <?php if(isset($_GET["succes_deconnexion"])) : ?>
-                <p>Vous avez été déconnecté!</p>
-            <?php endif; ?>
+                <?php if(isset($_GET["succes_creation"])) : ?>
+                    <p>Votre compte a été créé!</p>
+                <?php endif; ?>
+                <!-- Fin Message Utilisateur -->
+                
+                <input type="email" name="email" placeholder="Adresse e-mail" autofocus>
+                <input type="password" name="mot_de_passe" placeholder="Mot de passe">
+                <input type="submit" value="Se connecter">
+            </form>
 
-            <?php if(isset($_GET["echec_creation"])) : ?>
-                <p>La création du compte a échoué.</p>
-            <?php endif; ?>
+            <a href="compte-creer">Inscription</a>
+        </section>
 
-            <?php if(isset($_GET["succes_creation"])) : ?>
-                <p>Votre compte a été créé!</p>
-            <?php endif; ?>
-            <!-- Fin Message Utilisateur -->
-            
-            <input type="email" name="email" placeholder="Adresse e-mail" autofocus>
-            <input type="password" name="mot_de_passe" placeholder="Mot de passe">
-            <input type="submit" value="Se connecter">
-        </form>
+    </main>
 
-        <a href="compte-creer">Inscription</a>
-    </section>
-
-</main>
+</div>
 
 <?php include("views/components/foot.php") ?>

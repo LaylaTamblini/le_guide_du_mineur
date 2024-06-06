@@ -1,0 +1,24 @@
+.interface {
+
+    & header {
+        background-color: #1B1212;
+        padding: 1rem;
+
+        nav {
+            @include setFlex(row, space-between, center);
+            width: 70%;
+            margin: 0 auto;
+
+            a {
+                color: aliceblue;
+                text-decoration: none;
+            }
+        }
+    }
+
+    & main {
+        height: 100vh;
+        background-image: url("../images/background.webp");
+        background-size: cover;
+    }
+}
