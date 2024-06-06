@@ -22,4 +22,6 @@ $routes = [
     "activites-creer" => ["ActiviteController", "create"],
     // Traite la création d'une activité
     "activites-enregistrer" => ["ActiviteController", "store"],
+    // Traite la suppression d'une activité
+    "activites-supprimer" => ["ActiviteController", "destroy"],
 ];

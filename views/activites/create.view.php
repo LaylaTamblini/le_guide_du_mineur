@@ -12,6 +12,12 @@
                 <p>Tous les champs sont requis sauf l'image. Merci de les remplir pour continuer.</p>
             </section>
         <?php endif; ?>
+
+        <?php if(isset($_GET["echec_activite"])) : ?>
+            <section class="message-utilisateur">
+                <p>L'activité n'a pas été ajouté. Veuillez réessayez plus tard.</p>
+            </section>
+        <?php endif; ?>
         <!-- Fin Message Utilisateur -->
         
         <input type="text" name="titre" placeholder="Titre de l'activité" autofocus>

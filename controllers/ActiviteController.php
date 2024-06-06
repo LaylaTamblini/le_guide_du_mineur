@@ -42,6 +42,9 @@ class ActiviteController extends Controller {
 
     }
 
+    /**
+     * Traite l'enregistrement d'une activité dans la base de donnée.
+     */
     public function store() {
         // Protection de la route
         if(empty($_SESSION["utilisateur_id"])){
@@ -70,6 +73,28 @@ class ActiviteController extends Controller {
         }
 
         $this->rediriger("activites?succes_activite");
+    }
+
+    /**
+     * Traite la suppression d'une activité
+     */
+    public function destroy() {
+        // Protection de la route
+        if(empty($_SESSION["utilisateur_id"])){
+            $this->rediriger("index");
+        }
+        
+        if(empty($_GET["id"])) {
+            $this->rediriger("activites?id_inexistant");
+        }
+
+        $succes = (new Activite)->supprimer($_GET["id"]);
+
+        if(!$succes) {
+            $this->rediriger("activites?echec_suppression");
+        }
+        
+        $this->rediriger("activites?succes_suppression");
     }
 
 }

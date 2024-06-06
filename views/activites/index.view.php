@@ -2,6 +2,38 @@
 
 <h1>Vos activités, <?= $utilisateur->prenom ?></h1>
 
+<!-- Début Message Utilisateur -->
+    <?php if(isset($_GET["informations_requises"])) : ?>
+        <section class="message-utilisateur">
+            <p>Tous les champs sont requis sauf l'image. Merci de les remplir pour continuer.</p>
+        </section>
+    <?php endif; ?>
+
+    <?php if(isset($_GET["succes_activite"])) : ?>
+        <section class="message-utilisateur">
+            <p>Bravo! L'activité a été créer!</p>
+        </section>
+    <?php endif; ?>
+
+    <?php if(isset($_GET["id_inexistant"])) : ?>
+        <section class="message-utilisateur">
+            <p>L'activité n'existe pas.</p>
+        </section>
+    <?php endif; ?>
+
+    <?php if(isset($_GET["echec_suppression"])) : ?>
+        <section class="message-utilisateur">
+            <p>L'activité n'a pas pu être supprimé. Réessayez plus tard.</p>
+        </section>
+    <?php endif; ?>
+
+    <?php if(isset($_GET["succes_suppression"])) : ?>
+        <section class="message-utilisateur">
+            <p>L'activité a été supprimé!</p>
+        </section>
+    <?php endif; ?>
+<!-- Fin Message Utilisateur -->
+
 <!-- Liste des activités -->
 <section class="activites">
 

@@ -8,7 +8,7 @@ class Activite extends Model {
     protected $table = "activites"; 
     
     /**
-     * Retourne toutes les activités, incluant les informations sur l'utilisateur.
+     * Retourne toutes les activités avec leur catégorie, incluant les informations sur l'utilisateur.
      *
      * @param integer $id Id de l'utilisateur
      * 
@@ -39,15 +39,13 @@ class Activite extends Model {
     /**
      * Ajoute une nouvelle activité dans la base de donnée.
      *
-     * @param string $prenom Prénom de l'utilisateur
-     * @param string $nom Nom de famille de l'utilisateur
-     * @param string $email Adresse e-mail de l'utilisateur
-     * @param string $mot_de_passe Mot de passe de l'utilisateur
+     * @param string $titre Titre de l'activité
+     * @param string $image Image de l'activité
+     * @param integer $categorie_id Id de la catégorie de l'activité
+     * @param integer $utilisateur_id Id du créateur de l'activité
      * 
      * @return boolean
-     */
-
-
+     */        
     public function ajouter(string $titre, string $image, int $categorie_id, int $utilisateur_id) : bool {
         $sql = "
         INSERT INTO $this->table (titre, image, categorie_id, utilisateur_id)
@@ -61,6 +59,26 @@ class Activite extends Model {
             ":image" => $image,
             ":categorie_id" => $categorie_id,
             ":utilisateur_id" => $utilisateur_id,
+        ]);
+    }
+
+    /**
+     * Supprime une activité
+     *
+     * @param int $id Id de l'activité
+     * 
+     * @return bool
+     */
+    public function supprimer(int $id) : bool {
+        $sql = "
+            DELETE FROM $this->table
+            WHERE id = :id
+        ";
+
+        $requete = $this->pdo()->prepare($sql);
+
+        return $requete->execute([
+            ":id" => $id
         ]);
     }
 }
