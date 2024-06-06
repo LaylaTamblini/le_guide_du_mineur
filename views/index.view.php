@@ -1,44 +1,25 @@
 <?php include("views/components/head.php") ?>
 
-<div class="interface">
-    
-    <main>
-    
-        <section class="authentification">
-            <form action="compte-connecter" method="POST">
+<main>
 
-                <!-- Début Message Utilisateur -->
-                <?php if(isset($_GET["informations_requises"])) : ?>
-                    <p>Tous les champs sont requis. Merci de les remplir pour continuer.</p>
-                <?php endif; ?>
-
-                <?php if(isset($_GET["informations_invalides"])) : ?>
-                    <p>L'adresse email ou le mot de passe que vous avez entré est incorrect.</p>
-                <?php endif; ?>
-
-                <?php if(isset($_GET["succes_deconnexion"])) : ?>
-                    <p>Vous avez été déconnecté!</p>
-                <?php endif; ?>
-
-                <?php if(isset($_GET["echec_creation"])) : ?>
-                    <p>La création du compte a échoué.</p>
-                <?php endif; ?>
-
-                <?php if(isset($_GET["succes_creation"])) : ?>
-                    <p>Votre compte a été créé!</p>
-                <?php endif; ?>
-                <!-- Fin Message Utilisateur -->
-                
+    <section class="authentification">
+        <form action="compte-connecter" method="POST">
+            <label>
+                Adresse e-mail
                 <input type="email" name="email" placeholder="Adresse e-mail" autofocus>
+            </label>
+
+            <label>
+                Mot de passe
                 <input type="password" name="mot_de_passe" placeholder="Mot de passe">
-                <input type="submit" value="Se connecter">
-            </form>
+            </label>
 
-            <a href="compte-creer">Inscription</a>
-        </section>
+            <input type="submit" value="Se connecter">
+        </form>
 
-    </main>
-
-</div>
+        <a href="compte-creer">Créer votre compte</a>
+    </section>
+    
+</main>
 
 <?php include("views/components/foot.php") ?>

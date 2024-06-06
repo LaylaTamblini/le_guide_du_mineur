@@ -1,24 +1,66 @@
-.interface {
+main {
+    @include setFlex(row, center, center);
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/background.webp");
+    background-size: cover;
+    background-position: center;
 
-    & header {
-        background-color: #1B1212;
-        padding: 1rem;
-
-        nav {
-            @include setFlex(row, space-between, center);
-            width: 70%;
-            margin: 0 auto;
-
-            a {
-                color: aliceblue;
-                text-decoration: none;
-            }
-        }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 0;
     }
 
-    & main {
-        height: 100vh;
-        background-image: url("../images/background.webp");
-        background-size: cover;
+    .authentification {
+        @include setFlex(column, center, center);
+
+        z-index: 1;
+        margin: 1rem;
+        padding: 2rem;
+        border-radius: 0.6rem;
+        color: aliceblue;
+        background-color: rgb(48, 48, 48);
+
+        & form {
+            @include setFlex(column, center, flex-start);
+
+            label {
+                @include setFlex(column, center, flex-start);
+
+                font-size: 0.8rem;
+
+                &:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+                input[type=email], input[type=password] {
+                    padding: 0.5rem;
+                }
+            }
+
+            input[type=submit] {
+                width: 100%;
+                height: 2rem;
+                background-color: rgb(241, 167, 7);
+                border: none;
+                border-bottom: 3px solid black;
+                border-top: 2px solid rgba(255, 255, 255, 0.74);
+                font-family: "Jersey 15", sans-serif;
+                color: black;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border-radius: 0.4rem;
+            }
+        }
+
+        a {
+            color: white;
+            margin-top: 1rem;
+        }
+
     }
 }

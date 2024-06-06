@@ -90,24 +90,71 @@ h1, h2, h3, h4 {
   margin-right: 0.5rem;
 }
 
-.interface header {
-  background-color: #1B1212;
-  padding: 1rem;
-}
-.interface header nav {
+main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 70%;
-  margin: 0 auto;
-}
-.interface header nav a {
-  color: aliceblue;
-  text-decoration: none;
-}
-.interface main {
+  width: 100%;
   height: 100vh;
   background-image: url("../images/background.webp");
   background-size: cover;
+  background-position: center;
+}
+main::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+main .authentification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 0.6rem;
+  color: aliceblue;
+  background-color: rgb(48, 48, 48);
+}
+main .authentification form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+main .authentification form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 0.8rem;
+}
+main .authentification form label:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+main .authentification form label input[type=email], main .authentification form label input[type=password] {
+  padding: 0.5rem;
+}
+main .authentification form input[type=submit] {
+  width: 100%;
+  height: 2rem;
+  background-color: rgb(241, 167, 7);
+  border: none;
+  border-bottom: 3px solid black;
+  border-top: 2px solid rgba(255, 255, 255, 0.74);
+  font-family: "Jersey 15", sans-serif;
+  color: black;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 0.4rem;
+}
+main .authentification a {
+  color: white;
+  margin-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
