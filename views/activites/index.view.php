@@ -51,11 +51,16 @@
         <!-- Début Foreach Activité -->
         <?php foreach ($activites as $activite): ?>
             <article class="activite">
-                <a href="activites-supprimer?id=<?= $activite->id ?>">
-                    <span class="material-icons">
-                        delete
-                    </span>
-                </a>
+
+                <form action="activites-supprimer" method="POST">
+                    <input type="hidden" name="id" value="<?= $activite->id ?>">
+
+                    <button type="submit">
+                        <span class="material-icons">
+                            delete
+                        </span>
+                    </button>
+                </form>
 
                 <p><?= $activite->categorie_nom ?></p>
                 <p><?= $activite->titre ?></p>

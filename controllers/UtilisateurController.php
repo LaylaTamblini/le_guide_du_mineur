@@ -37,12 +37,20 @@ class UtilisateurController extends Controller {
      * Traite la création d'un compte.
      */
     public function store() {
+        // Validation des champs
         if(empty($_POST["prenom"]) ||
            empty($_POST["nom"]) || 
            empty($_POST["email"]) ||
            empty($_POST["mot_de_passe"]) ||
-           empty($_POST["confirmation_mdp"])){
+           empty($_POST["confirmation_mdp"])) {
+
             $this->rediriger("compte-creer?informations_requises");
+        }
+
+        $utilisateur = (new Utilisateur)->parEmail($_POST["email"]);
+
+        if($utilisateur) {
+            $this->rediriger("compte-creer?erreur_courriel");
         }
 
         if($_POST["mot_de_passe"] != $_POST["confirmation_mdp"]) {

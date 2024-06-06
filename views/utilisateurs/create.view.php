@@ -18,6 +18,14 @@
                 <p>Le mot de passe et la confirmation de mot de passe ne correspondent pas.</p>
             </section>
         <?php endif; ?>
+
+        <?php if(isset($_GET["erreur_courriel"])) : ?>
+            <section class="message-utilisateur">
+                <p>L'adresse e-mail existe déjà. Veuillez vous 
+                    <a href="index">connecter</a>
+                </p>
+            </section>
+        <?php endif; ?>
         <!-- Fin Message Utilisateur -->
 
         <input type="text" name="prenom" placeholder="Prénom" autofocus>

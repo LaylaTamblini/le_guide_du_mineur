@@ -84,11 +84,11 @@ class ActiviteController extends Controller {
             $this->rediriger("index");
         }
         
-        if(empty($_GET["id"])) {
+        if(empty($_POST["id"])) {
             $this->rediriger("activites?id_inexistant");
         }
 
-        $succes = (new Activite)->supprimer($_GET["id"]);
+        $succes = (new Activite)->supprimer($_POST["id"]);
 
         if(!$succes) {
             $this->rediriger("activites?echec_suppression");
