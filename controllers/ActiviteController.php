@@ -20,9 +20,7 @@ class ActiviteController extends Controller {
         }
 
         $this->vue("activites/index", [
-            // Informations sur les activtiés selon l'utilisateur
             "activites" => (new Activite)->toutAvecUtilisateur($_SESSION["utilisateur_id"]),
-            // Informations de l'utilisateur
             "utilisateur" => (new Utilisateur)->parId($_SESSION["utilisateur_id"]),
         ]);
     }
@@ -37,9 +35,8 @@ class ActiviteController extends Controller {
         }
 
         $this->vue("activites/create", [
-            "categories" => (new Categorie)->recuperationCategories()
+            "categories" => (new Categorie)->tout()
         ]);
-
     }
 
     /**

@@ -13,7 +13,7 @@ class Model
      * @return PDO
      */
     protected function pdo() : object {
-        if(self::$pdo == null){
+        if(self::$pdo == null) {
             $env = parse_ini_file(".env");            
 
             $hote = $env["HOST"];
@@ -46,8 +46,10 @@ class Model
      * @return array|false
      */
     public function tout() : array|false {
-        $sql = "SELECT *
-                FROM $this->table";
+        $sql = "
+            SELECT *
+            FROM $this->table
+        ";
 
         $requete = self::pdo()->prepare($sql);
         $requete->execute();
@@ -58,14 +60,16 @@ class Model
     /**
      * Retourne une entrée en fonction d'un id.
      *
-     * @param integer $id L'id ciblé
+     * @param integer $id
      * 
      * @return object|false
      */
     public function parId(int $id) : object|false {
-        $sql = "SELECT *
-                FROM $this->table
-                WHERE id = :id";
+        $sql = "
+            SELECT *
+            FROM $this->table
+            WHERE id = :id
+        ";
 
         $requete = self::pdo()->prepare($sql);
         $requete->execute([
@@ -73,5 +77,25 @@ class Model
         ]);
 
         return $requete->fetch();
+    }
+
+    /**
+     * Supprime une entrée.
+     *
+     * @param integer $id
+     * 
+     * @return bool
+     */
+    public function supprimer(int $id) : bool {
+        $sql = "
+            DELETE FROM $this->table
+            WHERE id = :id
+        ";
+        
+        $requete = $this->pdo()->prepare($sql);
+
+        return $requete->execute([
+            ":id" => $id
+        ]);
     }
 }

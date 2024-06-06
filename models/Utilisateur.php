@@ -10,10 +10,10 @@ class Utilisateur extends Model {
     /**
      * Ajoute un nouvel utilisateur dans la base de donnée.
      *
-     * @param string $prenom Prénom de l'utilisateur
-     * @param string $nom Nom de famille de l'utilisateur
-     * @param string $email Adresse e-mail de l'utilisateur
-     * @param string $mot_de_passe Mot de passe de l'utilisateur
+     * @param string $prenom
+     * @param string $nom
+     * @param string $email
+     * @param string $mot_de_passe
      * 
      * @return boolean
      */
@@ -36,7 +36,7 @@ class Utilisateur extends Model {
     /**
      * Retourne un utilisateur selon un email.
      *
-     * @param string $email Adresse e-mail de l'utilisateur.
+     * @param string $email
      * 
      * @return object|false
      */

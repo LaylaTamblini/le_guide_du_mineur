@@ -15,9 +15,9 @@ class Controller {
     /**
      * Redirige à l'URL fourni.
      *
-     * @param string $url Chemin de la redirection
+     * @param string $url
      */
-    protected function rediriger($url) {
+    protected function rediriger(string $url) {
         header("location: $url");
         exit();
     }
@@ -25,10 +25,10 @@ class Controller {
     /**
      * Inclut la vue spécifiée.
      *
-     * @param string $chemin Mot clé pour l'affichage de la vue
+     * @param string $chemin
      * @param array $donnees
      */
-    protected function vue($chemin, $donnees = []) {
+    protected function vue(string $chemin, array $donnees = []) {
         extract($donnees);
         include("views/$chemin.view.php");
     }

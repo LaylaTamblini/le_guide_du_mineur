@@ -16,7 +16,6 @@ class UtilisateurController extends Controller {
             $this->rediriger("activites");
         }
 
-        // Affiche la vue
         $this->vue("index", [
             "titre" => " | Un guide pour TOI ⛏️"
         ]);
@@ -26,6 +25,7 @@ class UtilisateurController extends Controller {
      * Affiche le formulaire de création de compte.
      */
     public function create() {
+        // Protection de la route
         if(!empty($_SESSION["utilisateur_id"])) {
             $this->rediriger("activites");
         }
@@ -96,6 +96,11 @@ class UtilisateurController extends Controller {
      * Traite la déconnexion d'un utilisateur.
      */
     public function deconnecter() {
+        // Protection de la route
+        if(empty($_SESSION["utilisateur_id"])) {
+            $this->rediriger("index");
+        }
+
         session_destroy();
         $this->rediriger("index?succes_deconnexion");
     }
