@@ -1,8 +1,10 @@
 <?php include("views/components/head.php") ?>
 
-<main>
+<main class="accueil">
 
-    <h1>Accueil</h1>
+    <section class="hero">
+        <h1>Construisez votre propre manuel d'exploration</h1>
+    </section>
 
     <section class="authentification">
         <form action="compte-connecter" method="POST">
