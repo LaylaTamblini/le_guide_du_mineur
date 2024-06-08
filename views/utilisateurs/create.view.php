@@ -3,25 +3,53 @@
 <main>
 
     <!-- Début Message Utilisateur -->
-            <?php if(isset($_GET["informations_requises"])) : ?>
-                <section class="message-utilisateur">
-                    <p>Tu as oublié des éléments essentiels pour ton aventure, complète <span>tous les champs</span> avant de continuer!</p>
-                </section>
-            <?php endif; ?>
+    <?php if(isset($_GET["informations_requises"])) : ?>
+        <section class="message-utilisateur" v-if="messageUtilisateur">
+            <span class="material-icons">
+                priority_high
+            </span>
+            
+            <p>Aventurier, tu dois compléter <span>tous les champs</span> avant de continuer.</p>
+            
+            <button @click.prevent="fermerMessage()">
+                <span class="material-icons">
+                    close
+                </span>
+            </button>
+        </section>
+    <?php endif; ?>
 
-            <?php if(isset($_GET["mdp_invalide"])) : ?>
-                <section class="message-utilisateur">
-                    <p>Tes mots de passe ne correspondent pas. Assure-toi qu'ils sont <span>identiques</span> pour déverrouiller la suite!</p>
-                </section>
-            <?php endif; ?>
+    <?php if(isset($_GET["mdp_invalide"])) : ?>
+        <section class="message-utilisateur" v-if="messageUtilisateur">
+            <span class="material-icons">
+                priority_high
+            </span>
 
-            <?php if(isset($_GET["erreur_courriel"])) : ?>
-                <section class="message-utilisateur">
-                    <p>
-                        Hé, cette adresse e-mail est déjà utilisée! <a href="index">Connecte-toi</a> pour continuer ton aventure.
-                    </p>
-                </section>
-            <?php endif; ?>
+            <p>Tes mots de passe ne correspondent pas. Assure-toi qu'ils sont <span>identiques.</span></p>
+
+            <button @click.prevent="fermerMessage()">
+                <span class="material-icons">
+                    close
+                </span>
+            </button>
+        </section>
+    <?php endif; ?>
+
+    <?php if(isset($_GET["erreur_courriel"])) : ?>
+        <section class="message-utilisateur">
+            <span class="material-icons">
+                priority_high
+            </span>
+
+            <p>Cette adresse e-mail est déjà utilisée! <a href="index">Connecte-toi</a> pour continuer ton aventure.</p>
+
+            <button @click.prevent="fermerMessage()">
+                <span class="material-icons">
+                    close
+                </span>
+            </button>
+        </section>
+    <?php endif; ?>
     <!-- Fin Message Utilisateur -->
 
     <section class="formulaire">

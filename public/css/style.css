@@ -59,8 +59,10 @@ table {
   --noir: #1B1212;
   --noir-pale: #302d2d;
   --transparence: #1b12121c;
-  --orange: #F29F05;
-  --orange-hover: #b87905;
+  --orange: #ffb81d;
+  --orange-hover: #db930e;
+  --alert: #F20530;
+  --succes: #73be51;
 }
 
 /**
@@ -163,6 +165,7 @@ main::before {
   border: none;
   color: var(--blanc);
   margin-bottom: 1rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 .formulaire form input[type=email]::-moz-placeholder, .formulaire form input[type=password]::-moz-placeholder, .formulaire form input[type=text]::-moz-placeholder {
   color: var(--blanc-transparence);
@@ -180,11 +183,43 @@ main::before {
 }
 
 .message-utilisateur {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   z-index: 1;
-  min-width: 300px;
+  max-width: 500px;
   margin: 1rem;
-  padding: 2rem;
+  margin-bottom: 0;
+  padding: 1rem;
   border-radius: 0.6rem;
   color: var(--blanc);
-  background-color: #F20530;
+  background-color: var(--alert);
+  line-height: 1.2rem;
+  box-shadow: 1px 1px 10px var(--noir-pale);
+}
+.message-utilisateur p {
+  margin: 0 1rem;
+}
+.message-utilisateur button {
+  font-size: 0.8rem;
+  border: none;
+  background-color: transparent;
+  color: var(--blanc);
+  cursor: pointer;
+}
+.message-utilisateur span {
+  font-weight: 800;
+}
+.message-utilisateur a {
+  color: var(--blanc);
+  font-weight: 800;
+}
+
+.succes {
+  background-color: var(--succes);
+  color: var(--noir);
+}
+.succes button {
+  color: var(--noir);
 }/*# sourceMappingURL=style.css.map */

@@ -8,31 +8,33 @@
     border-radius: 0.6rem;
     color: var(--blanc);
     background-color: var(--noir-pale);
-
+    
     & h1 {
         margin-bottom: 2rem
-    }
-
-    & form {
-        @include setFlex(column, space-between, flex-start);
-        width: 80%;
-        height: auto;
-
-        input[type=email], input[type=password], input[type=text] {
-            width: 100%;
-            margin-top: 0.2rem;
-            padding: 0.8rem;
-            border-radius: 0.6rem;
-            background-color: var(--noir);
-            border: none;
-            color: var(--blanc);
-            margin-bottom: 1rem;
-
-            &::placeholder {
-                color: var(--blanc-transparence);
-                letter-spacing: 0.5px;
-            }
         }
+        
+        & form {
+            @include setFlex(column, space-between, flex-start);
+            width: 80%;
+            height: auto;
+            
+
+            input[type=email], input[type=password], input[type=text] {
+                width: 100%;
+                margin-top: 0.2rem;
+                padding: 0.8rem;
+                border-radius: 0.6rem;
+                background-color: var(--noir);
+                border: none;
+                color: var(--blanc);
+                margin-bottom: 1rem;
+                font-family: "Plus Jakarta Sans", sans-serif;
+
+                &::placeholder {
+                    color: var(--blanc-transparence);
+                    letter-spacing: 0.5px;
+                }
+            }
     }
 
     a {

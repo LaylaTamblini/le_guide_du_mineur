@@ -1,9 +1,43 @@
 .message-utilisateur {
+    @include setFlex(row, space-between, center);
     z-index: 1;
-    min-width: 300px;
+    max-width: 500px;
     margin: 1rem;
-    padding: 2rem;
+    margin-bottom: 0;
+    padding: 1rem;
     border-radius: 0.6rem;
     color: var(--blanc);
-    background-color: #F20530;
+    background-color: var(--alert);
+    line-height: 1.2rem;
+    box-shadow: 1px 1px 10px var(--noir-pale);
+    
+    p {
+        margin: 0 1rem;
+    }
+
+    & button {
+        font-size: 0.8rem;
+        border: none;
+        background-color: transparent;
+        color: var(--blanc);
+        cursor: pointer;
+    }
+
+    span {
+        font-weight: 800;
+    }
+
+    a {
+        color: var(--blanc);
+        font-weight: 800;
+    }
+}
+
+.succes {
+    background-color: var(--succes);
+    color: var(--noir);
+
+    & button {
+        color: var(--noir);
+    }
 }
