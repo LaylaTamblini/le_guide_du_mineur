@@ -1,0 +1,9 @@
+header {
+    @include setFlex(row, space-between, center);
+    padding: 1rem;
+    background-color: var(--noir-pale);
+
+    a {
+        color: var(--blanc);
+    }
+}

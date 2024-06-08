@@ -1,11 +1,11 @@
-main {
+.section-non-connecte {
     @include setFlex(column, center, center);
     width: 100%;
     min-height: 100vh;
     background-image: url("../images/background.webp");
     background-size: cover;
     background-position: center;
-
+    
     &::before {
         content: "";
         position: absolute;
@@ -14,4 +14,12 @@ main {
         background-color: var(--transparence);
         z-index: 0;
     }
+}
+
+.section-connecte {
+    min-height: 100vh;
+    background-image: url("../images/texture_bg.webp");
+    background-size: 200px;
+    background-repeat: repeat;
+    padding: 1rem;
 }

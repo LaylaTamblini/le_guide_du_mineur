@@ -39,3 +39,33 @@ h1 {
         background-color: var(--orange-hover);
     }
 }
+
+.btn-creer, .btn-deco {
+    background-color: var(--orange);
+    border-bottom: 4px solid var(--noir);
+    border-top: 2px solid var(--blanc);
+    border-radius: 0.4rem;
+    font-family: "Tiny5", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--orange-hover);
+    }
+}
+
+.btn-deco {
+    @include setFlex(column,center, center);
+    
+    span {
+        font-size: 1.4rem;
+    }
+
+    &:hover {
+        background-color: var(--alert);
+    }
+}

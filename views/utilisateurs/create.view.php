@@ -1,6 +1,6 @@
 <?php include("views/components/head.php") ?>
 
-<main>
+<main class="section-non-connecte">
 
     <!-- Début Message Utilisateur -->
     <?php if(isset($_GET["informations_requises"])) : ?>

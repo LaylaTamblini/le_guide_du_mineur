@@ -112,7 +112,37 @@ h1 {
   background-color: var(--orange-hover);
 }
 
-main {
+.btn-creer, .btn-deco {
+  background-color: var(--orange);
+  border-bottom: 4px solid var(--noir);
+  border-top: 2px solid var(--blanc);
+  border-radius: 0.4rem;
+  font-family: "Tiny5", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+.btn-creer:hover, .btn-deco:hover {
+  background-color: var(--orange-hover);
+}
+
+.btn-deco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-deco span {
+  font-size: 1.4rem;
+}
+.btn-deco:hover {
+  background-color: var(--alert);
+}
+
+.section-non-connecte {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,13 +153,21 @@ main {
   background-size: cover;
   background-position: center;
 }
-main::before {
+.section-non-connecte::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: var(--transparence);
   z-index: 0;
+}
+
+.section-connecte {
+  min-height: 100vh;
+  background-image: url("../images/texture_bg.webp");
+  background-size: 200px;
+  background-repeat: repeat;
+  padding: 1rem;
 }
 
 .formulaire {
@@ -222,4 +260,16 @@ main::before {
 }
 .succes button {
   color: var(--noir);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--noir-pale);
+}
+header a {
+  color: var(--blanc);
 }/*# sourceMappingURL=style.css.map */
