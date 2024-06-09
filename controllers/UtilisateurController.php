@@ -17,7 +17,7 @@ class UtilisateurController extends Controller {
         }
 
         $this->vue("index", [
-            "titre" => " | Accueil"
+            "titre" => " | Accueil ⛏️"
         ]);
     }
 
@@ -31,7 +31,7 @@ class UtilisateurController extends Controller {
         }
         
         $this->vue("utilisateurs/create", [
-            "titre" => " | Création de compte"
+            "titre" => " | Création de compte 💎"
         ]);
     }
 
