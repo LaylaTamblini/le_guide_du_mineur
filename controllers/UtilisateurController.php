@@ -17,7 +17,7 @@ class UtilisateurController extends Controller {
         }
 
         $this->vue("index", [
-            "titre" => " | Un guide pour TOI ⛏️"
+            "titre" => " | Accueil"
         ]);
     }
 
@@ -30,7 +30,9 @@ class UtilisateurController extends Controller {
             $this->rediriger("activites");
         }
         
-        $this->vue("utilisateurs/create");
+        $this->vue("utilisateurs/create", [
+            "titre" => " | Création de compte"
+        ]);
     }
 
     /**
