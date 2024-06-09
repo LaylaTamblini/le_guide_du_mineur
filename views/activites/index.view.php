@@ -1,7 +1,6 @@
 <?php include("views/components/head.php") ?>
 
 <header>
-    
     <a href="compte-deconnecter" class="btn-deco">
         <span class="material-icons">
             logout
@@ -11,10 +10,8 @@
     <a href="activites-creer" class="btn-creer">Ajouter une quête</a>
 </header>
 
+
 <main class="section-connecte">
-    
-    <h1>Vos activités, <?= $utilisateur->prenom ?></h1>
-    
     <!-- Début Message Utilisateur -->
         <?php if(isset($_GET["succes_activite"])) : ?>
             <section class="message-utilisateur succes" v-if="messageUtilisateur">
@@ -80,6 +77,8 @@
             </section>
         <?php endif; ?>
     <!-- Fin Message Utilisateur -->
+
+    <h1>Bienvenue, <?= $utilisateur->prenom ?>!</h1> 
     
     <!-- Liste des activités -->
     <section class="activites">

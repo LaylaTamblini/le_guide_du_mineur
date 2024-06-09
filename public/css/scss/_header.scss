@@ -1,7 +1,8 @@
 header {
     @include setFlex(row, space-between, center);
+    position: absolute;
+    width: 100%;
     padding: 1rem;
-    background-color: var(--noir-pale);
 
     a {
         color: var(--blanc);

@@ -61,6 +61,8 @@ table {
   --transparence: #1b12121c;
   --orange: #ffb81d;
   --orange-hover: #db930e;
+  --bleu: #63c9f1;
+  --bleu-hover: #41a8d1;
   --alert: #F20530;
   --succes: #73be51;
 }
@@ -91,6 +93,7 @@ h1 {
   font-family: "Tiny5", sans-serif;
   font-size: 2.5rem;
   text-align: center;
+  text-shadow: 1px 1px 10px var(--noir);
 }
 
 .btn-submit {
@@ -163,11 +166,20 @@ h1 {
 }
 
 .section-connecte {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   min-height: 100vh;
   background-image: url("../images/texture_bg.webp");
   background-size: 200px;
   background-repeat: repeat;
   padding: 1rem;
+  padding-top: 3rem;
+}
+.section-connecte h1 {
+  color: var(--blanc);
 }
 
 .formulaire {
@@ -191,10 +203,25 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  width: 80%;
+  width: 90%;
   height: auto;
 }
-.formulaire form input[type=email], .formulaire form input[type=password], .formulaire form input[type=text] {
+.formulaire form .choisir-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--noir);
+  background-color: var(--bleu);
+}
+.formulaire form .choisir-image:hover {
+  background-color: var(--bleu-hover);
+}
+.formulaire form .nom-fichier {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+.formulaire form input[type=email], .formulaire form input[type=password], .formulaire form input[type=text], .formulaire form select {
   width: 100%;
   margin-top: 0.2rem;
   padding: 0.8rem;
@@ -205,13 +232,20 @@ h1 {
   margin-bottom: 1rem;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.formulaire form input[type=email]::-moz-placeholder, .formulaire form input[type=password]::-moz-placeholder, .formulaire form input[type=text]::-moz-placeholder {
+.formulaire form input[type=email]::-moz-placeholder, .formulaire form input[type=password]::-moz-placeholder, .formulaire form input[type=text]::-moz-placeholder, .formulaire form select::-moz-placeholder {
   color: var(--blanc-transparence);
   letter-spacing: 0.5px;
 }
-.formulaire form input[type=email]::placeholder, .formulaire form input[type=password]::placeholder, .formulaire form input[type=text]::placeholder {
+.formulaire form input[type=email]::placeholder, .formulaire form input[type=password]::placeholder, .formulaire form input[type=text]::placeholder, .formulaire form select::placeholder {
   color: var(--blanc-transparence);
   letter-spacing: 0.5px;
+}
+.formulaire form input[type=file] {
+  display: none;
+}
+.formulaire form select {
+  margin-top: 1rem;
+  color: var(--blanc-transparence);
 }
 .formulaire a {
   font-weight: 300;
@@ -267,8 +301,9 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  width: 100%;
   padding: 1rem;
-  background-color: var(--noir-pale);
 }
 header a {
   color: var(--blanc);

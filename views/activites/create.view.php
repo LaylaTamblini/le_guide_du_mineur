@@ -1,7 +1,14 @@
 <?php include("views/components/head.php") ?>
 
-<a href="activites">Retour</a>
-<h1>Création d'une activité</h1>
+<header>
+    <a href="activites" class="btn-deco">
+        <span class="material-icons">
+            arrow_back
+        </span>
+    </a>
+</header>
+
+<main class="section-connecte">
 
     <!-- Début Message Utilisateur -->
     <?php if(isset($_GET["informations_requises"])) : ?>
@@ -19,7 +26,7 @@
             </button>
         </section>
     <?php endif; ?>
-
+    
     <?php if(isset($_GET["echec_activite"])) : ?>
         <section class="message-utilisateur" v-if="messageUtilisateur">
             <span class="material-icons">
@@ -37,22 +44,32 @@
     <?php endif; ?>
     <!-- Fin Message Utilisateur -->
 
-<section class="formulaire">
-    <form action="activites-enregistrer" method="POST" enctype="multipart/form-data">
+    <section class="formulaire">
+        <h1>Création d'une quête</h1>
+        
+        <form action="activites-enregistrer" method="POST" enctype="multipart/form-data">
+            <input type="text" name="titre" placeholder="Titre de l'activité" autofocus>
+            
+            <label class="choisir-image btn-submit">
+                Choisir une image
+                <input type="file" name="image" @change="contenirFichier">
+            </label>
 
-        <input type="text" name="titre" placeholder="Titre de l'activité" autofocus>
-        <input type="file" name="image" placeholder="Image de l'activité">
+            <p class="nom-fichier">{{nomFichier}}</p>
 
-        <select name="categories">
-            <?php foreach ($categories as $categorie ): ?>
-                <option value="<?= $categorie->id ?>">
-                    <?= $categorie->nom ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-
-        <input type="submit" value="Créer votre activité">
-    </form>
-</section>
+            <select name="categories">
+                <option value="" disabled selected>Choisir une catégorie</option>
+                <?php foreach ($categories as $categorie ): ?>
+                    <option value="<?= $categorie->id ?>">
+                        <?= $categorie->nom ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+    
+            <input type="submit" value="Ajouter une quête" class="btn-submit">
+        </form>
+    </section>
+    
+</main>
 
 <?php include("views/components/foot.php") ?>
