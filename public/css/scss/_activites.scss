@@ -13,6 +13,12 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+        
+    .container-activites {            
+        @media screen and (min-width: 992px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
 
     & h1 {
         margin-bottom: 0.5rem;
