@@ -13,10 +13,6 @@
     <!-- Début Message Utilisateur -->
     <?php if(isset($_GET["informations_requises"])) : ?>
         <section class="message-utilisateur" v-if="messageUtilisateur">
-            <span class="material-icons">
-                priority_high
-            </span>
-            
             <p>Aventurier, tu dois compléter <span>tous les champs</span>, sauf l'image, avant de continuer.</p>
             
             <button @click.prevent="fermerMessage()">
@@ -29,10 +25,6 @@
     
     <?php if(isset($_GET["echec_activite"])) : ?>
         <section class="message-utilisateur" v-if="messageUtilisateur">
-            <span class="material-icons">
-                priority_high
-            </span>
-            
             <p>Quelque chose s'est mal passé lors de la création du compte. <span>Réessaie plus tard.</span></p>
             
             <button @click.prevent="fermerMessage()">

@@ -290,7 +290,6 @@ h2 {
   background-color: var(--alert);
   line-height: 1.2rem;
   box-shadow: 1px 1px 10px var(--noir-pale);
-  text-align: center;
 }
 .message-utilisateur p {
   margin: 0 1rem;
@@ -328,7 +327,7 @@ header {
   padding: 1rem;
 }
 header a {
-  color: var(--blanc);
+  color: var(--noir);
 }
 
 .activites {
@@ -425,4 +424,28 @@ header a {
   .activites {
     width: 900px;
   }
+}
+
+.erreur-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  padding: 1rem;
+}
+.erreur-404 h1 {
+  margin-bottom: 1rem;
+}
+.erreur-404 a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--noir);
+  font-size: 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 2rem;
 }/*# sourceMappingURL=style.css.map */

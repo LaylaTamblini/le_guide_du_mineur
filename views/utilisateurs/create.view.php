@@ -5,10 +5,6 @@
     <!-- Début Message Utilisateur -->
     <?php if(isset($_GET["informations_requises"])) : ?>
         <section class="message-utilisateur" v-if="messageUtilisateur">
-            <span class="material-icons">
-                priority_high
-            </span>
-            
             <p>Aventurier, tu dois compléter <span>tous les champs</span> avant de continuer.</p>
             
             <button @click.prevent="fermerMessage()">
@@ -21,10 +17,6 @@
 
     <?php if(isset($_GET["mdp_invalide"])) : ?>
         <section class="message-utilisateur" v-if="messageUtilisateur">
-            <span class="material-icons">
-                priority_high
-            </span>
-
             <p>Tes mots de passe ne correspondent pas. Assure-toi qu'ils sont <span>identiques.</span></p>
 
             <button @click.prevent="fermerMessage()">
@@ -36,11 +28,7 @@
     <?php endif; ?>
 
     <?php if(isset($_GET["erreur_courriel"])) : ?>
-        <section class="message-utilisateur">
-            <span class="material-icons">
-                priority_high
-            </span>
-
+        <section class="message-utilisateur" v-if="messageUtilisateur">
             <p>Cette adresse e-mail est déjà utilisée! <a href="index">Connecte-toi</a> pour continuer ton aventure.</p>
 
             <button @click.prevent="fermerMessage()">

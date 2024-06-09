@@ -1,0 +1,18 @@
+.erreur-404 {
+    @include setFlex(column, center, center);
+    padding: 0;
+    padding: 1rem;
+
+    & h1 {
+        margin-bottom: 1rem;
+    }
+
+    & a {
+        @include setFlex(column, center, center);
+        text-decoration: none;
+        color: var(--noir);
+        font-size: 1.3rem;
+        width: fit-content;
+        padding: 0 2rem;
+    }
+}

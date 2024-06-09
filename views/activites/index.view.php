@@ -15,10 +15,6 @@
     <!-- Début Message Utilisateur -->
         <?php if(isset($_GET["succes_activite"])) : ?>
             <section class="message-utilisateur succes" v-if="messageUtilisateur">
-                <span class="material-icons">
-                    priority_high
-                </span>
-                
                 <p>Quête ajoutée avec <span>succès</span>!</p>
                 
                 <button @click.prevent="fermerMessage()">
@@ -31,10 +27,6 @@
     
         <?php if(isset($_GET["id_inexistant"])) : ?>
             <section class="message-utilisateur" v-if="messageUtilisateur">
-                <span class="material-icons">
-                    priority_high
-                </span>
-                
                 <p>Cette quête semble perdue dans le néant cubique. <span>Elle n'existe pas.</span> Vérifie et réessaye!</p>
                 
                 <button @click.prevent="fermerMessage()">
@@ -47,10 +39,6 @@
     
         <?php if(isset($_GET["echec_suppression"])) : ?>
             <section class="message-utilisateur" v-if="messageUtilisateur">
-                <span class="material-icons">
-                    priority_high
-                </span>
-                
                 <p>Impossible de supprimer la quête. Quelque chose a mal tourné. <span>Réessaie plus tard.</span></p>
                 
                 <button @click.prevent="fermerMessage()">
@@ -63,10 +51,6 @@
     
         <?php if(isset($_GET["succes_suppression"])) : ?>
             <section class="message-utilisateur succes" v-if="messageUtilisateur">
-                <span class="material-icons">
-                    priority_high
-                </span>
-                
                 <p><span>Quête supprimée avec succès!</span> Ta liste de quêtes est à jour.</p>
                 
                 <button @click.prevent="fermerMessage()">
