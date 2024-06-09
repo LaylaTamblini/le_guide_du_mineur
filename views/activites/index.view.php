@@ -77,48 +77,57 @@
             </section>
         <?php endif; ?>
     <!-- Fin Message Utilisateur -->
-
-    <h1>Bienvenue, <?= $utilisateur->prenom ?>!</h1> 
     
     <!-- Liste des activités -->
     <section class="activites">
+
+        <h1>Bienvenue, <?= $utilisateur->prenom ?>!</h1>
+        
+        <div class="container-activites">
+            <!-- Une activité -->
+            <?php if(!$activites): ?>
     
-        <h2>Voici vos activités</h2>
-    
-        <!-- Une activité -->
-        <?php if(!$activites): ?>
-    
-            <article class="activite">
-                <p>Vous n'avez pas d'activité.</p>
-            </article>
-    
-        <?php else: ?>
-    
-            <!-- Début Foreach Activité -->
-            <?php foreach ($activites as $activite): ?>
                 <article class="activite">
-    
-                    <form action="activites-supprimer" method="POST">
-                        <input type="hidden" name="id" value="<?= $activite->id ?>">
-    
-                        <button type="submit">
-                            <span class="material-icons">
-                                delete
-                            </span>
-                        </button>
-                    </form>
-    
-                    <p><?= $activite->categorie_nom ?></p>
-                    <p><?= $activite->titre ?></p>
-                    
-                    <?php if($activite->image): ?>
-                        <img src="<?= $activite->image ?>" alt="" width="300px">
-                    <?php endif; ?>
+                    <img src="public/images/bee.gif" alt="">
+                    <p class="aucun-article">Il semble que tu n'as pas encore de quêtes à afficher.</p>
+                    <a href="activites-creer">Crée ta première quête!</a>
                 </article>
-            <?php endforeach; ?>
-            <!-- Fin Foreach Activité -->
     
-        <?php endif; ?>
+            <?php else: ?>
+    
+                <!-- Début Foreach Activité -->
+                <?php foreach ($activites as $activite): ?>
+                    <article class="activite">
+    
+                        <div>
+                            <?php if($activite->image): ?>
+                                <img src="<?= $activite->image ?>" alt="">
+                            <?php else: ?>
+                                <img src="public/images/bee.gif" alt="">
+                            <?php endif; ?>
+    
+                            <h2 class="activite-categorie"><?= $activite->categorie_nom ?></h2>
+    
+                            <form action="activites-supprimer" method="POST" class="btn-delete">
+                                <input type="hidden" name="id" value="<?= $activite->id ?>">
+        
+                                <button type="submit">
+                                    <span class="material-icons">
+                                        delete
+                                    </span>
+                                </button>
+                            </form>
+
+                            <h3><?= $activite->titre ?></h3>
+                        </div>
+    
+    
+                    </article>
+                <?php endforeach; ?>
+                <!-- Fin Foreach Activité -->
+    
+            <?php endif; ?>
+        </div>
     
     </section>
 

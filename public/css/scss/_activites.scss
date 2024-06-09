@@ -1,0 +1,100 @@
+.activites {
+    background-color: var(--noir-pale);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    text-align: center;
+
+    .container-activites {
+        display: grid;
+        gap: 0.5rem;
+
+        @media screen and (min-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    & h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    .activite {
+        @include setFlex(column, center, center);
+        background-color: var(--noir);
+        padding: 0.8rem;
+        border-radius: 0.4rem;
+
+        .aucun-article {
+            margin-bottom: 0.5rem;
+            color: var(--blanc);
+        }
+
+        & a {
+            color: var(--blanc);
+        }
+
+        h2 {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            background-color: var(--bleu);
+            font-family: "Tiny5", sans-serif;
+            border-radius: 0.4rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+            }
+
+        h3 {
+            position: absolute;
+            bottom: 0.5rem;
+            width: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: "Tiny5", sans-serif;
+            background-color: var(--noir-pale);
+            color: var(--blanc);
+            border-radius: 0.4rem;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .btn-delete {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+
+            & button {
+                background-color: var(--alert);
+                border-radius: 0.4rem;
+                border: none;
+                border-bottom: 4px solid var(--noir);
+                border-top: 2px solid var(--blanc);
+                transition: all 0.2s ease-out;
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: var(--alert-hover);
+                }
+            }
+        }
+
+        & div {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            border-radius: 0.6rem;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        width: 900px;
+    }
+}

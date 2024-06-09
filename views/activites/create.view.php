@@ -1,7 +1,7 @@
 <?php include("views/components/head.php") ?>
 
 <header>
-    <a href="activites" class="btn-deco">
+    <a href="activites" class="btn-deco btn-back">
         <span class="material-icons">
             arrow_back
         </span>

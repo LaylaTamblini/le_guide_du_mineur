@@ -64,6 +64,7 @@ table {
   --bleu: #63c9f1;
   --bleu-hover: #41a8d1;
   --alert: #F20530;
+  --alert-hover: #cf0a2e;
   --succes: #73be51;
 }
 
@@ -94,6 +95,10 @@ h1 {
   font-size: 2.5rem;
   text-align: center;
   text-shadow: 1px 1px 10px var(--noir);
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 .btn-submit {
@@ -145,6 +150,22 @@ h1 {
   background-color: var(--alert);
 }
 
+.btn-back:hover {
+  background-color: var(--orange-hover);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--noir-pale);
+}
+
+::-webkit-scrollbar-button {
+  background-color: var(--noir);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--succes);
+}
+
 .section-non-connecte {
   display: flex;
   flex-direction: column;
@@ -176,7 +197,7 @@ h1 {
   background-size: 200px;
   background-repeat: repeat;
   padding: 1rem;
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 .section-connecte h1 {
   color: var(--blanc);
@@ -269,6 +290,7 @@ h1 {
   background-color: var(--alert);
   line-height: 1.2rem;
   box-shadow: 1px 1px 10px var(--noir-pale);
+  text-align: center;
 }
 .message-utilisateur p {
   margin: 0 1rem;
@@ -307,4 +329,100 @@ header {
 }
 header a {
   color: var(--blanc);
+}
+
+.activites {
+  background-color: var(--noir-pale);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+.activites .container-activites {
+  display: grid;
+  gap: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+  .activites .container-activites {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.activites h1 {
+  margin-bottom: 0.5rem;
+}
+.activites .activite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--noir);
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+}
+.activites .activite .aucun-article {
+  margin-bottom: 0.5rem;
+  color: var(--blanc);
+}
+.activites .activite a {
+  color: var(--blanc);
+}
+.activites .activite h2 {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: var(--bleu);
+  font-family: "Tiny5", sans-serif;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.activites .activite h3 {
+  position: absolute;
+  bottom: 0.5rem;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Tiny5", sans-serif;
+  background-color: var(--noir-pale);
+  color: var(--blanc);
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.activites .activite .btn-delete {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.activites .activite .btn-delete button {
+  background-color: var(--alert);
+  border-radius: 0.4rem;
+  border: none;
+  border-bottom: 4px solid var(--noir);
+  border-top: 2px solid var(--blanc);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+.activites .activite .btn-delete button:hover {
+  background-color: var(--alert-hover);
+}
+.activites .activite div {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+.activites .activite div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media screen and (min-width: 992px) {
+  .activites {
+    width: 900px;
+  }
 }/*# sourceMappingURL=style.css.map */
