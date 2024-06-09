@@ -81,8 +81,8 @@
         <?php else: ?>
 
         <!-- Début Foreach Activité -->
-        <?php foreach ($activites as $activite): ?>
-            <div class="container-activites">
+        <div class="container-activites">
+            <?php foreach ($activites as $activite): ?>
                 <article class="activite">
         
                     <div>
@@ -108,8 +108,8 @@
                     </div>
         
                 </article>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
         <!-- Fin Foreach Activité -->
     <?php endif; ?>
     

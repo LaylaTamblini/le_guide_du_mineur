@@ -347,7 +347,7 @@ header a {
   }
 }
 @media screen and (min-width: 992px) {
-  .activites .container-activites {
+  .activites .container-activite {
     grid-template-columns: repeat(1, 1fr);
   }
 }
