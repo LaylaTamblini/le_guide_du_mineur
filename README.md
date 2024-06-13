@@ -16,7 +16,7 @@ Inspiration
 
 Autres
 ------
-Utilisation d'un cadriciel maison
-Utilisation de Vue.js
-CSS/SASS réalisé par moi
-Images et textes créés avec ChatGPT 4 et DALL-E
+1. Utilisation d'un cadriciel maison
+2. Utilisation de Vue.js
+3. CSS/SASS réalisé par moi
+4. Images et textes créés avec ChatGPT 4 et DALL-E
