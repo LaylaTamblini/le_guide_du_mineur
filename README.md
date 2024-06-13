@@ -4,11 +4,11 @@ Ce projet a été réalisé dans le cadre du cours de Programmation Web avancée
 
 Fonctionnalités
 ---------------
-Création de compte
-Connexion à une page d'administration
-Création d'une activité
-Sélection d'une catégorie
-Suppression d'une activité
+1. Création de compte
+2. Connexion à une page d'administration
+3. Création d'une activité
+4. Sélection d'une catégorie
+5. Suppression d'une activité
 
 Inspiration
 -----------
